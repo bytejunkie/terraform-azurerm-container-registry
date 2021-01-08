@@ -28,6 +28,21 @@ variable "sku" {
   }
 }
 
+variable "admin_enabled" {
+  description = "(Optional) Specifies whether the admin user is enabled"
+  default     = "true"
+
+  validation {
+    condition     = var.admin_enabled == "true" || var.admin_enabled == "false"
+    error_message = "Possible values are True and False."
+  }
+}
+
+variable "georeplication_locations" {
+  description = "(Optional) A list of Azure locations where the container registry should be geo-replicated."
+  default     = null
+}
+
 variable "tags" {
   type        = map(any)
   description = "(Optional) A map of tags to assign to the resource."

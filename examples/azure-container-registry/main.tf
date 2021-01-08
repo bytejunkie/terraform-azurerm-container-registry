@@ -9,7 +9,7 @@ provider "azurerm" {
 module "resourcegroup" {
   source = "bytejunkie/resource-group/azurerm"
 
-  name_strings   = ["byt", "rsg", "acr"]
+  name_strings   = ["byt", "rsg", "acr2"]
   name_separator = "-"
 
   #   tags = var.tags
@@ -22,10 +22,11 @@ module "resourcegroup" {
 module "container_registry" {
   source = "../../"
 
-  name_strings        = ["byt", "con", "reg", "001"]
+  name_strings        = ["byt", "con", "reg", "002"]
   resource_group_name = module.resourcegroup.resource_group_name
   location            = "west europe"
   sku                 = "Standard"
+  admin_enabled       = "true"
 
   depends_on = [
     module.resourcegroup
