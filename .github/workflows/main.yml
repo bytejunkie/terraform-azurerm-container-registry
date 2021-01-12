@@ -30,10 +30,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          export ARM_CLIENT_ID=${{ secrets.AZURE_CREDENTIALS.clientId }}
-          export ARM_CLIENT_SECRET=${{ secrets.AZURE_CREDENTIALS.clientSecret }}
-          export ARM_SUBSCRIPTION_ID=${{ secrets.AZURE_CREDENTIALS.subscriptionId }}
-          export ARM_TENANT_ID=${{ secrets.AZURE_CREDENTIALS.tenantId }}
+          export ARM_CLIENT_ID=${{ secrets.application_id }}
+          export ARM_CLIENT_SECRET=${{ secrets.client_secret }}
+          export ARM_SUBSCRIPTION_ID=${{ secrets.subscription_id }}
+          export ARM_TENANT_ID=${{ secrets.tenant_id }}
           cd examples/azure-container-registry
           terraform init
           terraform plan
