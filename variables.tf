@@ -10,7 +10,7 @@ variable "name_strings" {
 }
 
 variable "location" {
-  description = "the character to use to separate the strings used to build the name - override with empty string if none required"
+  description = "the location in which to deploy the resources"
   type        = string
 }
 
